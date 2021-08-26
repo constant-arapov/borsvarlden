@@ -28,8 +28,7 @@ namespace borsvarlden.Models
         public string Slug { get; set; }
         public bool IsFinwireNews { get; set; }
         public bool IsBorsvarldenArticle { get; set; } 
-        public bool IsPublished { get; set; } 
-
+        public bool IsPublished { get; set; }
         public string CompanyName { get; set; }
         public DateTime PrioDeadLine { get; set; }
         public DateTime ActualDeadLine { get; set; }
@@ -38,9 +37,8 @@ namespace borsvarlden.Models
         public bool Is15MinutesVideo { get; set; }
         public bool IsUseAzureStorage { get; set; }
         public bool IsHotStocks { get; set; }
-
+        public bool IsGreenTagHighlighted { get; set; }
         public DateTime DateStartVisible { get; set; }
-
         public DateTime VideoVisibleDeadLine { get; set; }
 
         public bool GreenTag { get; set; }

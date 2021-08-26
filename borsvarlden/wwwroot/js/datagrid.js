@@ -161,6 +161,12 @@ $(function () {
                 visible: true
             },
             {
+                dataField: "isGreenTagHighlighted",
+                caption: "Is Highlighted",
+                dataType: "boolean",
+                visible: true
+            },
+            {
                 dataField: "FinwireNew2FinwireCompanies",
                 caption: "Companies related",
                 visible: true,
@@ -398,8 +404,15 @@ $(function () {
                         visible: true
                     },
                     {
-                        colSpan: 2,
+                        colSpan: 1,
                         dataField: "greenTag",
+                        dataType: "boolean",
+                        visible: true
+                    },
+                    {
+                        colSpan: 1,
+                        dataField: "isGreenTagHighlighted",
+                        caption: "Is highlighted",
                         dataType: "boolean",
                         visible: true
                     },

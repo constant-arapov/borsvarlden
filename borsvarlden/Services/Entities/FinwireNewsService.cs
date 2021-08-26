@@ -45,6 +45,7 @@ namespace borsvarlden.Services.Entities
         Task<List<FinwireNew>> GetFinwireNewWithCompany(int id);
         Task<IndexNewsViewModel> GetHotStocksForFeeding(int newsCount);
         Task<IndexNewsViewModel> GetGreenTagNewsForFeeding(int newsCount);
+        Task<IndexNewsViewModel> GetGreenTagNewsHighLighted(int newsCount);
     }
 
     public class FinwireNewsService : IFinwireNewsService
@@ -126,12 +127,22 @@ namespace borsvarlden.Services.Entities
         public async Task<IndexNewsViewModel> GetGreenTagNewsForFeeding(int newsCount)
         {
             var result = new IndexNewsViewModel();
-
-            var newsList = await GetGreenTagNews().Take(newsCount).ToListAsync();
-
-            
+            var newsList = await GetGreenTagNews()
+                .Where(x => !x.IsGreenTagHighlighted)
+                .Take(newsCount)
+                .ToListAsync();
             result.News = MapFinwireNewToViewModel(newsList);
+            return result;
+        }
 
+        public async Task<IndexNewsViewModel> GetGreenTagNewsHighLighted(int newsCount)
+        {
+            var result = new IndexNewsViewModel();
+            var newsList = await GetGreenTagNews()
+                .Where(x=>x.IsGreenTagHighlighted)
+                .Take(newsCount)
+                .ToListAsync();
+            result.News = MapFinwireNewToViewModel(newsList);
             return result;
         }
 

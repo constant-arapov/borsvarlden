@@ -50,6 +50,10 @@
     <Compile Remove="Migrations\20210703092220_IsVisibleFromCompanyList.Designer.cs" />
     <Compile Remove="Migrations\20210703185817_AddedIsCompanyInFocus.cs" />
     <Compile Remove="Migrations\20210703185817_AddedIsCompanyInFocus.Designer.cs" />
+    <Compile Remove="Migrations\20210826173753_AddedIsHighlighted.cs" />
+    <Compile Remove="Migrations\20210826173753_AddedIsHighlighted.Designer.cs" />
+    <Compile Remove="Migrations\20210826175411_AddedIsH.cs" />
+    <Compile Remove="Migrations\20210826175411_AddedIsH.Designer.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="compilerconfig.json" />
